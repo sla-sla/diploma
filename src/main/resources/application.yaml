@@ -1,0 +1,37 @@
+server:
+  port: 9999
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/netology
+    username: root
+    password: root
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+  main:
+    allow-circular-references: true
+
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+jwt:
+  token:
+    secret: "secret"
+    expiration: 18000
+
+cors:
+  origins: 'http://localhost:8080'
+  methods: '*'
+  headers: '*'
+  credentials: true

@@ -1,6 +1,7 @@
 package netologyru.controller;
 
 import lombok.AllArgsConstructor;
+import netologyru.models.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,8 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public AuthenticationResponse login(@RequestBody AuthenticationRequest authenticationRequest) {
-        return authenticationService.login(authenticationRequest);
+        String token = authenticationService.login(authenticationRequest);
+        return new AuthenticationResponse(token);
     }
 
     @PostMapping("/logout")

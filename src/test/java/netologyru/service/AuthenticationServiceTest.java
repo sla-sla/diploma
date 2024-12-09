@@ -38,7 +38,7 @@ class AuthenticationServiceTest {
     void login() {
         Mockito.when(userService.loadUserByUsername(USERNAME_1)).thenReturn(USER_1);
         Mockito.when(jwtTokenUtil.generateToken(USER_1)).thenReturn(TOKEN_1);
-        assertEquals(AUTHENTICATION_RS, authenticationService.login(AUTHENTICATION_RQ));
+        assertEquals(TOKEN_1, authenticationService.login(AUTHENTICATION_RQ));
         Mockito.verify(authenticationManager, Mockito.times(1)).authenticate(USERNAME_PASSWORD_AUTHENTICATION_TOKEN);
         Mockito.verify(authenticationRepository, Mockito.times(1)).putTokenAndUsername(TOKEN_1, USERNAME_1);
     }

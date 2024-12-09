@@ -51,9 +51,9 @@ public class TestConstants {
 
     public static final List<StorageFile> STORAGE_FILE_LIST = List.of(STORAGE_FILE_1, STORAGE_FILE_2);
 
-    public static final FileResponse FILE_RS_1 = new FileResponse(FILENAME_1, SIZE_1);
-    public static final FileResponse FILE_RS_2 = new FileResponse(FILENAME_2, SIZE_2);
-    public static final List<FileResponse> FILE_RS_LIST = List.of(FILE_RS_1, FILE_RS_2);
+    public static final StorageFile FILE_RS_1 = new StorageFile(FILENAME_1, null, SIZE_1, null, null);
+    public static final StorageFile FILE_RS_2 = new StorageFile(FILENAME_2, null, SIZE_2, null, null);
+    public static final List<StorageFile> FILE_RS_LIST = List.of(FILE_RS_1, FILE_RS_2);
     public static final Integer LIMIT = 100;
 
     public static final AuthenticationRequest AUTHENTICATION_RQ = new AuthenticationRequest(USERNAME_1, PASSWORD_1);
